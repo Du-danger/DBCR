@@ -1,0 +1,26 @@
+import argparse
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Our DBCR.")
+    parser.add_argument('--data_path', nargs='?', default='data/', help='Input data path.')
+    parser.add_argument('--seed', type=int, default=2024, help='random seed')
+    parser.add_argument('--dataset', nargs='?', default='gowalla', help='Choose a dataset from {gowalla, amazon, tmall}')
+    parser.add_argument('--batch_size', type=int, default=4096, help='batch size')
+    parser.add_argument('--lr', type=float, default=0.001, help='Learning rate.')
+    parser.add_argument('--decay', default=0.99, type=float, help='learning rate')
+    parser.add_argument('--note', default=None, type=str, help='note')
+    parser.add_argument('--epoch', default=100, type=int, help='number of epochs')
+    parser.add_argument('--d', default=32, type=int, help='embedding size')
+    parser.add_argument('--is_norm', default=False, type=bool, help='if perform max_min norm')
+    parser.add_argument('--is_mean', default=False, type=bool, help='if perform mean pooling for behavior learning')
+    parser.add_argument('--n_b', default=3, type=int, help='number of behavior kinds')
+    parser.add_argument('--l', default=2, type=int, help='number of gnn layers')
+    parser.add_argument('--dropout', default=0.0, type=float, help='rate for edge dropout')
+    parser.add_argument('--temp', default=0.2, type=float, help='temperature in cl loss')
+    parser.add_argument('--lambda_1', default=0.2, type=float, help='weight of bcl loss')
+    parser.add_argument('--lambda_2', default=0.1, type=float, help='weight of pcl loss')
+    parser.add_argument('--lambda_3', default=1e-7, type=float, help='l2 reg weight')
+    parser.add_argument('--gpu', default=0, type=int, help='the gpu to use, -1 is cpu')
+    parser.add_argument('--show', default=0, type=int, help='show prep')
+
+    return parser.parse_args()
