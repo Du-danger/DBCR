@@ -1,3 +1,5 @@
+This is the official implementation version of "Decoupled Behavior-based Contrastive Recommendation" CIKM'24.
+
 ## 1. Run
 
 ```
