@@ -12,4 +12,4 @@ More 'args' detail, see parser.py
 
 
 ## 2. Dataset
-The datasets we use are same with the current SOTA method DCCF, which can be found in [DCCF github](https://github.com/HKUDS/DCCF).
+The datasets we use are same with the method DCCF, which can be found in [DCCF github](https://github.com/HKUDS/DCCF).
